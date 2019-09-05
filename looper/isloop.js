@@ -1,8 +1,10 @@
 'use strict';
 
 //Complete this algo
-const isLoop = (linkedlist) => {
-
+const isLoop = (linkedList, slow = linkedList.head, fast = linkedList.head.next) => {
+    if (slow === fast) return true
+    else if (!fast) return false
+    else return isLoop(linkedList, slow.next, fast.next.next)
 };
 
 
